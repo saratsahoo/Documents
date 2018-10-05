@@ -92,27 +92,88 @@ Each application is different and they have different issues to target(applicati
   * Adapter microservice, business microservice
   * Results cache
   * Service Registry
+  * Schema Registry
   * intelligent gateway & routing
   * cercuit breaker
+  * Security & Sessions
+  Orchestration
+  Translation
+  Filtering
+  Read / Write / Cached Service Seggrigation
+  Event driven Update
   
 
 3. Scalable Store Patterns
-  a. Document store, key-value store
+  * A service should have it's own database to scale independently.
+  * Document store, key-value store
   
 
 4. Microservices DevOps Patterns
-  a. log aggregator, correlation id, tracing, event logging (ELK / logstash / cloud native)
+  a. log aggregator, correlation id, tracing, event logging, call graph (Splunk, Logstash and ELK, and the Cloud
+Foundry Loggregator or DB logging mq)
   b. Per Service CI/CD and Per-Service HA and clustering, load balancing.
   c. cloud or on-premise
+  d. may require provisoning more physical / private servers for high performance.
   
   
 
 
 
 
+Adapter Microservice
+
+Context: You are designing an application using a Microservices Architecture. You want it to
+incorporate existing services (e.g. SOAP, JMS, or mainframe-based services) but their APIs do
+not use the RESTful or queue-based approach that is consistent with the microservices
+architecture.
+
+
+A Results Cache can be as simple as a Key-Value Store (either in-memory or in a
+Scalable Store).
+
+
+Page Cache
+Context: You are building a web or mobile application using a Microservices Architecture. You
+are applying the Backend for Frontends Pattern to build dispatchers for a web or mobile
+application.
+
+
+Results: For very long datasets, a Page Cache is preferable to fetching all the data at once and
+storing it in a Near Cache since you can render the first set of information more quickly – and in
+many cases, the user will never scroll past the first page of information.
+
+SCALABLE STORE PATTERNS
+A key part of the microservices architecture is that wherever possible each microservice should
+control or “own” its own data.
+
+
+The key here is that the database must be naturally distributed and able both to scale horizontally
+and to survive the failure of a database node. For the last several years, that has driven developers
+to the concept of “NoSQL” databases as described in [Sadalage]. Examples of this type of
+database include Redis, Cloudant, Memcached.
+
+
+However, quite recently a number of new distributed databases based on the relational model and
+collectively called “NewSQL” have also become available. These include options like Clustrix,
+MemSQL, or even MySQL cluster. NoSQL databases are typically less efficient at SQL-like
+queries because of differences in approaches to query optimization. So, if your application
+depends on SQL-centric complex query capability then a solution such as a NewSQL database or
+a distributed in-memory SQL database may be more efficient.
 
 
 
+Document Store
+Context: You are building applications with a Microservices Architecture. You are using
+RESTful API’s and representing the contents of your HTTP requests and responses as JSON
+(Javascript Object Notation) documents.
+Problem: How do you most efficiently store and retrieve the data corresponding to your HTTP
+responses?
+For instance, in MongoDB the basic construct is a collection of JSON documents
 
 
 
+Service Registry
+Context: You are building applications using a Microservices Architecture. You have many
+different Business Microservices comprising your application.
+
+Examples include IBM Bluemix’s Service Discovery, Netflix Eureka and the Amalgam8 Registry.
