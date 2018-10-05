@@ -2,7 +2,13 @@
 microservices-architecture
 ============================
 
+Architecture = (elements + relations + properties)
 
+4 view model
+Logical view
+Implementation View
+Process View
+Deploymnet View
 
 
 Context: You’re designing a server-side, multi-user application. You want your application to be
@@ -75,6 +81,48 @@ microservices architecture has become so popular.
 
 
 
+WHY
+=====
+
+Maintainability
+Scalability
+Security
+Evolvability
+Testability
+Deployablility
+Reliability
+Build better software faster
+Reducing lead time
+Increasing Deployment frequency
+Agile development becomes impossible
+Technology stacks becomes obsolete and rewrite becomes impossible
+gives loosly coupled
+can be used different technology stacks
+Team own services
+
+
+
+
+
+When using microservices:
+==============================
+How to decompose an application into services?
+How to deploy an application’s services?
+How to handle cross cutting concerns?
+Which communication mechanisms to use?
+How do external clients communicate with the services?
+How does a client discover the network location of a service instance?
+How to prevent a network or service failure from cascading to other services?
+How to maintain data consistency and implement queries?
+How to understand the behavior of an application and troubleshoot problems?
+How to make testing easier?
+How to implement a UI screen or page that displays data from multiple services?
+
+
+
+It depends....
+
+
 In our pattern language we introduce each section with
 one of 
 
@@ -93,7 +141,7 @@ Each application is different and they have different issues to target(applicati
   * Results cache
   * Service Registry
   * Schema Registry
-  * intelligent gateway & routing
+  * intelligent gateway & routing (API and static)
   * cercuit breaker
   * Security & Sessions
   Orchestration
@@ -106,6 +154,7 @@ Each application is different and they have different issues to target(applicati
 3. Scalable Store Patterns
   * A service should have it's own database to scale independently.
   * Document store, key-value store
+  * CQRS (Command and Query Responsibility Segregation) Read/Write Seggrigation
   
 
 4. Microservices DevOps Patterns
