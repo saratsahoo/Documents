@@ -2,6 +2,13 @@
 microservices-architecture
 ============================
 
+Context: You’re designing a server-side, multi-user application. You want your application to be
+modular, and you want the modules to be independent. Your application modules need to be
+capable of composition, scalability, and continuous deployment.
+
+Microservices can be deployed independently with zero downtime for continuous
+deployment. Microservices can scale and fail independently. Microservices developed and
+deployed independently will tend to become and remain separate modules.
 
 What is a Microservice?
 
@@ -62,9 +69,34 @@ microservices architecture has become so popular.
 
 
 In our pattern language we introduce each section with
-one of four root patterns: Modern Web Architecture, Microservices Architecture, Scalable
-Store and Microservices DevOps.
+one of 
+
+four root patterns: 
+=======================
+
+1. Modern Web Architecture Patterns
+  a. near cache
+  b. single page application, native mobile application
+  c. router
+  
+2. Microservices Architecture Patterns
+  a. backend for frontend - Page cache
+  b. Service Registry
+  c. Adapter microservice, business microservice
+  d. Results cache 
+
+3. Scalable Store Patterns
+  a. Document store, key-value store
+  
+
+4. Microservices DevOps Patterns
+  a. log aggregator, correlation id, tracing, event logging
 
 
 
-aspects of microservices
+
+
+
+
+
+
