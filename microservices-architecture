@@ -1,3 +1,70 @@
 
 microservices-architecture
 ============================
+
+
+What is a Microservice?
+
+Microservices is an application architectural style in which an application is composed of many
+discrete, network-connected components, termed microservices. The microservices architecturalstyle can be seen as an evolution of the SOA (Services Oriented Architecture) architectural style.
+The key differences between the two are that while applications built using SOA services tended
+to become focused on technical integration issues, and the level of the services implemented were
+often very fine-grained technical APIs, the microservices approach instead stay focused on
+implementing clear business capabilities through larger-grained business APIs.
+
+
+
+When you look at the implications of this, you see that five simple rules drive the implementation
+of applications built using the microservices architecture. They are:
+
+
+
+
+
+Break large monoliths down into many small services -- A single network-accessible
+service is the smallest deployable unit for a microservices application. Each service
+should run in its own process. This rule is sometimes stated as “one service per
+container”, where “container” could mean a Docker container or any other lightweight
+deployment mechanism such as a Cloud Foundry runtime.
+Optimize services for a single function – In a traditional monolithic SOA approach a
+single application runtime would perform multiple business functions. In a microservices
+approach, there should be one and only one business function per service. This makes
+each service smaller and simpler to write and maintain. Robert Martin calls this the
+“Single Reponsibility Principle”.
+Communicate via REST API and message brokers – One of the drawbacks of the SOA
+approach was that there was an explosion of standards and options for implementing SOA
+services. The microservices approach instead tries to strictly limit the types of network
+connectivity that a service can implement to achieve maximum simplicity. Likewise,
+another rule for microservices is to avoid the tight coupling introduced by implicit
+communication through a database – all communication from service to service must be
+through the service API or at least must use an explicit communication pattern such as the
+Claim Check Pattern from [Hohpe].
+Apply Per-service CI/CD -- When building a large application comprised of many
+services, you soon realize that different services evolve at different rates. Letting each
+service have its own unique Continuous Integration/Continuous Delivery pipeline allows
+that evolution to proceed at is own natural pace – unlike in the monolithic approach where
+different aspects of the system were forced to all be released at the speed of the slowest-
+moving part of the system.
+Apply Per-service HA/clustering decisions – Another realization when building large
+systems is that when it comes to clustering, not one size fits all. The monolithic approach
+of scaling all the services in the monolith at the same level often led to overutilization of
+some servers and underutilization of others – or even worse, starvation of some services by
+others when they monopolized all of the available shared resources such as thread pools.
+The reality is that in a large system, not all services need to scale and can be deployed in a
+Implementation Patterns for Microservices Architectures: Page - 2minimum number of servers to conserve resources. Others require scaling up to very large
+numbers.
+The power of the combination of these points (each of which will be referenced in the patterns
+below) and the benefits obtained from following them is the primary reason why the
+microservices architecture has become so popular.
+
+
+
+
+
+In our pattern language we introduce each section with
+one of four root patterns: Modern Web Architecture, Microservices Architecture, Scalable
+Store and Microservices DevOps.
+
+
+
+aspects of microservices
