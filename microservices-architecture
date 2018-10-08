@@ -148,7 +148,7 @@ Each application is different and they have different issues to target(applicati
   Translation
   Filtering
   Read / Write / Cached Service Seggrigation
-  Event driven Update / Architecture
+  Event Sourcing CQRS (Event driven Update) / Architecture
   
 
 3. Scalable Store Patterns
