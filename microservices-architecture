@@ -135,6 +135,7 @@ Each application is different and they have different issues to target(applicati
   b. single page application, native mobile application
   c. router
   d. BFF (backen for frontend)
+  * CORS (Cross Origin Resource Sharing)
   
 2. Microservices Architecture Patterns
   * backend for frontend - Page cache
@@ -168,6 +169,24 @@ Foundry Loggregator or DB logging mq)
   c. cloud or on-premise
   d. may require provisoning more physical / private servers for high performance.
   e. docker can ease deployment complexity
+  
+  Tools
+  -----
+  Actuator
+  Eureka
+  Zuul,
+  Ribbon
+  Sleuth
+  Hystrix
+  F5
+  BlueMix / PCF
+  Docker
+  (Splunk, Logstash and ELK, and the Cloud Foundry Loggregator or DB logging mq)
+  GraphQL
+  Swagger
+  Mongo/Cassandra/ElasticSearch/MySQL/SQL Server/Timeseries DB
+  
+  
   
   
 
