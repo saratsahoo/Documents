@@ -134,6 +134,7 @@ Each application is different and they have different issues to target(applicati
   a. near cache
   b. single page application, native mobile application
   c. router
+  d. BFF (backen for frontend)
   
 2. Microservices Architecture Patterns
   * backend for frontend - Page cache
@@ -141,6 +142,7 @@ Each application is different and they have different issues to target(applicati
   * Results cache
   * Service Registry
   * Schema Registry
+  * Use Config Server
   * intelligent gateway & routing (API and static)
   * cercuit breaker
   * Security & Sessions
@@ -149,6 +151,8 @@ Each application is different and they have different issues to target(applicati
   Filtering
   Read / Write / Cached Service Seggrigation
   Event Sourcing CQRS (Event driven Update) / Architecture
+  Central Error handling
+  
   
 
 3. Scalable Store Patterns
