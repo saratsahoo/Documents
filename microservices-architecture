@@ -148,11 +148,11 @@ Each application is different and they have different issues to target(applicati
   Translation
   Filtering
   Read / Write / Cached Service Seggrigation
-  Event driven Update
+  Event driven Update / Architecture
   
 
 3. Scalable Store Patterns
-  * A service should have it's own database to scale independently.
+  * A service should have it's own database to scale independently, and they communicate through events.
   * Document store, key-value store
   * CQRS (Command and Query Responsibility Segregation) Read/Write Seggrigation
   
@@ -163,6 +163,7 @@ Foundry Loggregator or DB logging mq)
   b. Per Service CI/CD and Per-Service HA and clustering, load balancing.
   c. cloud or on-premise
   d. may require provisoning more physical / private servers for high performance.
+  e. docker can ease deployment complexity
   
   
 
