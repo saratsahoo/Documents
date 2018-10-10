@@ -153,22 +153,31 @@ Each application is different and they have different issues to target(applicati
   Read / Write / Cached Service Seggrigation
   Event Sourcing CQRS (Event driven Update) / Architecture
   Central Error handling
+  * Async communications - RabbitMQ/ActiveMQ, Kafka
   
   
 
 3. Scalable Store Patterns
   * A service should have it's own database to scale independently, and they communicate through events.
+  * distributed transaction manager - hickari,Atomikos
   * Document store, key-value store
   * CQRS (Command and Query Responsibility Segregation) Read/Write Seggrigation
+  * using cache - central/local - Caffeine, EhCache 2, Hazelcast, JCache
+  * connection pools - hikaricp, Hibernate
   
 
 4. Microservices DevOps Patterns
-  a. log aggregator, correlation id, tracing, event logging, call graph (Splunk, Logstash and ELK, and the Cloud
+  a. log aggregator, correlation id, tracing, event logging, call graph with MQ (Splunk, Logstash and ELK, and the Cloud
 Foundry Loggregator or DB logging mq)
   b. Per Service CI/CD and Per-Service HA and clustering, load balancing.
   c. cloud or on-premise
   d. may require provisoning more physical / private servers for high performance.
   e. docker can ease deployment complexity
+  f. use profiles
+  
+  
+  
+  
   
   Tools
   -----
@@ -181,10 +190,10 @@ Foundry Loggregator or DB logging mq)
   F5
   BlueMix / PCF
   Docker
-  (Splunk, Logstash and ELK, and the Cloud Foundry Loggregator or DB logging mq)
+  (Datadog, Splunk, Graphite, Prometheus, Logstash and ELK, and the Cloud Foundry Loggregator or DB logging mq)
   GraphQL
   Swagger
-  Mongo/Cassandra/ElasticSearch/MySQL/SQL Server/Timeseries DB
+  Mongo/Cassandra/ElasticSearch/Redis/Neo4J/MySQL/SQL Server/Timeseries DB
   
   
   
